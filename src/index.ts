@@ -10,7 +10,7 @@ function createScene() {
 
     createLight(scene);
     createCamera(scene);
-    createFrontHouse(scene);
+    loadAsset(scene);
 
     return scene;
 }
@@ -21,14 +21,14 @@ function createLight(scene) {
 }
 
 function createCamera(scene) {
-    let camera = new ArcRotateCamera("cam", Tools.ToRadians(45), Tools.ToRadians(45), 2, new Vector3(20, 20, 20), scene);
-    camera.lowerRadiusLimit = 50;
-    camera.upperRadiusLimit = 60;
+    let camera = new ArcRotateCamera("cam", Tools.ToRadians(45), Tools.ToRadians(45), 2, new Vector3(0, 4, 0), scene);
+    camera.lowerRadiusLimit = 10;
+    camera.upperRadiusLimit = 20;
     camera.attachControl(canvas, true);
 }
 
-function createFrontHouse(scene) {
-    SceneLoader.ImportMesh('', './assets/', 'front-house.glb', scene);
+function loadAsset(scene) {
+    SceneLoader.ImportMesh('', './assets/', 'jersey.glb', scene);
 }
 
 
